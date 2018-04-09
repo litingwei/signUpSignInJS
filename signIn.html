@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>denglu</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+<div>
+	<span>登录</span>	
+	<form onsubmit="return check()">
+		<table>
+		    <tr>
+				<td>用户名：</td>
+				<td>
+					<input type="text" name="uname" id="uname">
+				</td>
+				<td id="msg_uname"></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td>
+					<input type="password" name="pwd" id="pwd">
+				</td>
+				<td id="msg_pwd"></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" name="" value="确定">
+				</td>
+			</tr>
+		</table>
+	</form>
+				
+</div>
+<script type="text/javascript">
+	function checkName(){
+		var tag=document.getElementById('uname');
+		var msg=document.getElementById('msg_uname');
+		msg.innerHTML="";
+		tag.style.border="1px solid gray";
+		reg=/^123$/;
+		if(!reg.test(tag.value)){
+			tag.style.border="2px solid red";
+			msg.innerHTML="账号错误！";
+			tag.value="";
+			return false;
+		}
+		return true;
+	}
+	function checkPwd(){
+		var tag2=document.getElementById('pwd');
+		var msg2=document.getElementById('msg_pwd');
+		msg2.innerHTML="";
+		tag2.style.border="1px solid gray";
+		reg=/^123$/;
+		if(!reg.test(tag2.value)){
+			tag2.style.border="2px solid red";		
+			tag2.value="";
+			msg2.innerHTML="密码错误";
+			return false;
+		}
+		return true;
+	}
+	function check(){
+		return checkName()&&checkPwd()
+	}
+</script>
+</body>
+</html>
